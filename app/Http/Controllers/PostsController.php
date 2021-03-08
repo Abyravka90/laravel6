@@ -48,4 +48,12 @@ class PostsController extends Controller
         return redirect(route('posts.index'));
     }
 
+    public function destroy($id)
+    {
+        $post = Post::find($id);
+        $post->delete();
+
+        return redirect(route('posts.index'));
+    }
+
 }
